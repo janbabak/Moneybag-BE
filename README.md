@@ -43,6 +43,15 @@ I developed the backend in Java and Spring framework and chose the MySql databas
 - Charts
 - Responsive web interface
 
+## 🧑‍🔬 Technologies
+
+- [Java](https://www.java.com/en/)
+- [Spring](https://spring.io)
+- [Maven](https://maven.apache.org)
+- [Docker](https://www.docker.com)
+- [MySql](https://www.mysql.com)
+- [git](https://git-scm.com)
+
 ## ❌ Issues
 
 I had to face a few issues during the development. For example, I wanted to add filtering and sorting parameters to the "get all records" endpoint. I solved this issue by using the specification-arg-resolver library, which can map request parameters to Jpa specifications, and by extending the record repository by PagingAndSortingRepository, and JpaSpecificationExecutor.
