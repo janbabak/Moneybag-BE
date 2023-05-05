@@ -22,7 +22,7 @@ is a single-page application connected via REST API and built with TypeScript, *
 
 - [📺 Video example](https://www.youtube.com/watch?v=rzZ-Xvy9iwY)
 - [💅 Frontend repo](https://github.com/janbabak/Moneybag-FE)
-- [📯 API documentation (Post man)](https://documenter.getpostman.com/view/131905572s93CRKWwv#b9ffcedf-337f-4546-8095-5740e9047e96)
+- [📯 API documentation (Post man)](https://documenter.getpostman.com/view/13190557/2s93CRKWwv)
 - [📄 API documentation (Swagger)](https://janbabak.github.io/Moneybag-BE/)
 
 ## ⚽️ Project Goals
