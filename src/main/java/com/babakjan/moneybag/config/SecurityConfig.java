@@ -33,7 +33,11 @@ public class SecurityConfig {
 
     //paths, which don't require authentication
     private final String[] noAuthPaths = {
+            // endpoint for check that the app is running
+            "/",
+            // authentication and registration endpoints
             "/auth/**",
+            // documentation endpoints
             "/swagger-resources/**",
             "/swagger-ui/**",
             "/swagger-ui/**",
