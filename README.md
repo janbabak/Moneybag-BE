@@ -15,8 +15,7 @@ Moneybag is a tool for **managing personal finances** that allows users to creat
 and expenses, and manage multiple accounts.
 
 The backend was written in **Java** using the **Spring framework** and uses a MySql database for data persistence. The
-frontend
-is a single-page application connected via REST API and built with TypeScript, **Vue.js**, and Vuetify.
+frontend is a single-page application connected via REST API and built with TypeScript, **Vue.js**, and Vuetify.
 
 ## 🔗 Links
 
@@ -28,9 +27,8 @@ is a single-page application connected via REST API and built with TypeScript, *
 ## ⚽️ Project Goals
 
 I created this project for several reasons. Firstly, I wanted to **experiment with various technologies**. Secondly, I
-aimed
-to experience all stages of the software development cycle. Additionally, I intended to add work to my portfolio that
-would demonstrate my development skills.
+aimed to experience all stages of the software development cycle. Additionally, I intended to add work to my portfolio
+that would demonstrate my development skills.
 
 ## 🏗️ Realization
 
@@ -38,11 +36,9 @@ To begin, I made a list of the **necessary features** and selected the appropria
 developing the backend server.
 
 I developed the **backend** in **Java** and **Spring** framework and chose the MySql database for data persistence. The
-application
-utilizes the **MVC architecture**. The database runs in a **Docker** container. Authentication and authorization are
-provided by
-**JWT token** using **Spring Security**. The API generates [Open Api](https://janbabak.github.io/Moneybag-BE/)
-documentation automatically. Additionally, I created
+application utilizes the **MVC architecture**. The database runs in a **Docker** container. Authentication and
+authorization are provided by **JWT token** using **Spring Security**. The API
+generates [Open Api](https://janbabak.github.io/Moneybag-BE/) documentation automatically. Additionally, I created
 [documentation](https://documenter.getpostman.com/view/13190557/2s93CRKWwv#b9ffcedf-337f-4546-8095-5740e9047e96) for the
 API using Postman, which includes example requests and responses.
 
