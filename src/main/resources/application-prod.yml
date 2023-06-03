@@ -4,14 +4,14 @@ spring:
     username: ${PROD_DB_USERNAME}
     password: ${PROD_DB_PASSWORD}
     name: moneybag
-    driver-class-name: com.mysql.jdbc.Driver
-  sql:
-    init:
-      mode: always
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: create
     show-sql: true
+  sql:
+    init:
+      mode: always
 
 server:
   servlet:
