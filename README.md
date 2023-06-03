@@ -11,9 +11,12 @@
 
 ## 📝 Description
 
-Moneybag is a **web application** used to manage **personal finance**. Users can have several accounts. They can create and categorize their records and then analyze their income and expenses.
+Moneybag is a tool for **managing personal finances** that allows users to create and categorize records, analyze income
+and expenses, and manage multiple accounts.
 
-The application consists of a **separate backend and frontend**, which are connected via a **REST API**. The backend is written in Java using the Spring framework and uses a MySql database for data persistence. The frontend is a **single-page application** written in TypeScript and the Vue.js and Vuetify frameworks.
+The backend was written in **Java** using the **Spring framework** and uses a MySql database for data persistence. The
+frontend
+is a single-page application connected via REST API and built with TypeScript, **Vue.js**, and Vuetify.
 
 ## 🔗 Links
 
@@ -22,18 +25,26 @@ The application consists of a **separate backend and frontend**, which are conne
 - [📯 API documentation (Post man)](https://documenter.getpostman.com/view/131905572s93CRKWwv#b9ffcedf-337f-4546-8095-5740e9047e96)
 - [📄 API documentation (Swagger)](https://janbabak.github.io/Moneybag-BE/)
 
-
-
-
 ## ⚽️ Project Goals
 
-There were several reasons why I created this project. First of all, I wanted to try different technologies. Secondly, I wanted to try all stages of a software development cycle. And I also wanted to add some work to my portfolio, which can showcase my development skills.
+I created this project for several reasons. Firstly, I wanted to **experiment with various technologies**. Secondly, I
+aimed
+to experience all stages of the software development cycle. Additionally, I intended to add work to my portfolio that
+would demonstrate my development skills.
 
 ## 🏗️ Realization
 
-First, I created a list of all the requirements, chose the necessary technologies, and then started developing the backend server.
+To begin, I made a list of the **necessary features** and selected the appropriate technologies, and then started
+developing the backend server.
 
-I developed the backend in Java and Spring framework and chose the MySql database for data persistence. The application utilizes the MVC architecture. The database runs in a Docker container. Authentication and authorization are provided by JWT token using Spring Security. The API automatically generates [Open Api](https://janbabak.github.io/Moneybag-BE/) documentation. I also created the API [documentation](https://documenter.getpostman.com/view/13190557/2s93CRKWwv#b9ffcedf-337f-4546-8095-5740e9047e96) with example requests and responses using Postman.
+I developed the **backend** in **Java** and **Spring** framework and chose the MySql database for data persistence. The
+application
+utilizes the **MVC architecture**. The database runs in a **Docker** container. Authentication and authorization are
+provided by
+**JWT token** using **Spring Security**. The API generates [Open Api](https://janbabak.github.io/Moneybag-BE/)
+documentation automatically. Additionally, I created
+[documentation](https://documenter.getpostman.com/view/13190557/2s93CRKWwv#b9ffcedf-337f-4546-8095-5740e9047e96) for the
+API using Postman, which includes example requests and responses.
 
 ## 🚀 Features
 
@@ -54,14 +65,19 @@ I developed the backend in Java and Spring framework and chose the MySql databas
 
 ## ❌ Issues
 
-I had to face a few issues during the development. For example, I wanted to add filtering and sorting parameters to the "get all records" endpoint. I solved this issue by using the specification-arg-resolver library, which can map request parameters to Jpa specifications, and by extending the record repository by PagingAndSortingRepository, and JpaSpecificationExecutor.
+During the development, I encountered some issues. One of them was adding filtering and sorting parameters to the "get
+all records" endpoint. To solve this problem, I used the specification-arg-resolver library which can map request
+parameters to Jpa specifications and extended the record repository by PagingAndSortingRepository, and
+JpaSpecificationExecutor.
 
 ## 😁 Conclusion
 
-I originally planned to create a much smaller project but finished with a larger one. I **gained new knowledge** during development - for instance, how to elegantly add **filtering parameters** to the API endpoint or use **JPQL** for more complex database queries. So, I am satisfied with the result of my work.
-
+I originally planned to create a much smaller project but finished with a larger one. I **gained new knowledge** during
+development - for instance, how to elegantly add **filtering parameters** to the API endpoint or use **JPQL** for more
+complex database queries. So, I am satisfied with the result of my work.
 
 ## ✅ Software requirements
+
 - Java 17
 - Docker, Docker compose
 
@@ -82,7 +98,8 @@ docker compose up -d
 
 ### Start the app
 
-- Create database schema - open `./src/main/resources/application.properties` find the following lines and (un)comment them
+- Create database schema - open `./src/main/resources/application.properties` find the following lines and (un)comment
+  them
   to look like this:
     ```
     #spring.jpa.hibernate.ddl-auto=none
@@ -102,7 +119,8 @@ docker compose up -d
     ```bash
     ./mvnw spring-boot:run
     ```
-- If you want to run the app repeatedly, comment the previously uncommented line because you don't want to insert test data
+- If you want to run the app repeatedly, comment the previously uncommented line because you don't want to insert test
+  data
   every time you restart the app.
 
 - Swagger documentation of running app can be found at http://localhost:8000/api/swagger-ui/index.html
