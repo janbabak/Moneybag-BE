@@ -94,30 +94,24 @@ docker compose up -d
 
 ### Start the app
 
-- Create database schema - open `./src/main/resources/application.properties` find the following lines and (un)comment
-  them
-  to look like this:
-    ```
-    #spring.jpa.hibernate.ddl-auto=none
-    spring.jpa.hibernate.ddl-auto=create
-    ```
+- Set the development environment. The app will connect to the local database.
+  ```bash
+  export spring_profiles_active=dev
+  ```
+- Create database schema - open `./src/main/resources/application.yml` set the value of `spring.jpa.hibernate.ddl-auto`
+  to `create`.
 - Run the app (app will run on http://localhost:8000/api)
     ```bash
     ./mvnw spring-boot:run
     ```
 - If you want to initiate the database with test data, stop the app and undo the changes you've done in the application
-  properties file,
-  plus make sure, that the following line is uncommented
-  ```
-  spring.sql.init.mode=always
-  ```
+  properties file (set `create` to `none`), plus make sure, that the `spring.sql.init.mode` has value `always`.
 - run the app again
     ```bash
     ./mvnw spring-boot:run
     ```
-- If you want to run the app repeatedly, comment the previously uncommented line because you don't want to insert test
-  data
-  every time you restart the app.
+- If you want to run the app repeatedly, change the previously added `always` to `never` line because you don't want to
+  insert test data every time you restart the app.
 
 - Swagger documentation of running app can be found at http://localhost:8000/api/swagger-ui/index.html
 
