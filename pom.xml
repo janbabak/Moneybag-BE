@@ -47,6 +47,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>compile</scope>
         </dependency>
+        <!-- H2 database for testing https://mvnrepository.com/artifact/com.h2database/h2 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

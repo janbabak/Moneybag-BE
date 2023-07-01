@@ -53,6 +53,7 @@ public interface RecordRepository extends
 
         /**
          * Get time series of balance evolution by user. Include only accounts, which are included in statistics.
+         * is not tested, as the `function('date_format...` is not compatible with H2 db
          * @param userId user id
          * @param dateGe dateGe dateGe date greater or equal than (inclusive)
          * @param dateLt dateLt date lower than (exclusive)
