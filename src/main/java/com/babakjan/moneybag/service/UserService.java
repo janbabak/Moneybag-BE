@@ -163,8 +163,9 @@ public class UserService {
         Double totalBalance = getTotalBalance(userId, dateLt);
         List<TimeSeriesEntry> balanceEvolution =  recordRepository.getSpendingEvolution(userId, dateGe, dateLt);
 
+        Double tmp = 0.0;
         for (int i = balanceEvolution.size() - 1; i >= 0; i--) {
-            Double tmp = balanceEvolution.get(i).getY();
+            tmp = balanceEvolution.get(i).getY();
             balanceEvolution.get(i).setY(totalBalance);
             totalBalance -= tmp;
 
@@ -173,7 +174,7 @@ public class UserService {
             dateWithoutTime.setHours(0);
             dateWithoutTime.setMinutes(0);
 
-            balanceEvolution.get(0).setX(dateWithoutTime);
+            balanceEvolution.get(i).setX(dateWithoutTime);
         }
 
         //when no records
@@ -182,7 +183,7 @@ public class UserService {
         }
 
         //add first and last element in order to fill entire interval
-        balanceEvolution.add(0, new TimeSeriesEntry(balanceEvolution.get(0).getY(), dateGe));
+        balanceEvolution.add(0, new TimeSeriesEntry(balanceEvolution.get(0).getY() - tmp, dateGe));
         Date dateLe = dateLt;
         dateLe.setDate(dateLt.getDate() - 1); //last element must be inclusive
         balanceEvolution.add(new TimeSeriesEntry(balanceEvolution.get(balanceEvolution.size() -1).getY(), dateLe));
