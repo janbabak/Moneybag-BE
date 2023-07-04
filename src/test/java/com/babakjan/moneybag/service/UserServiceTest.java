@@ -7,24 +7,27 @@ import com.babakjan.moneybag.error.exception.UserNotFoundException;
 import com.babakjan.moneybag.repository.AccountRepository;
 import com.babakjan.moneybag.repository.RecordRepository;
 import com.babakjan.moneybag.repository.UserRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.*;
 
 import static org.assertj.core.api.Assertions.withPrecision;
-import static org.assertj.core.api.AssertionsForClassTypes.*;
-import static org.mockito.ArgumentMatchers.*;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
-
+    @InjectMocks
+    private UserService userService;
     @Mock
     private UserRepository userRepository;
     @Mock
@@ -33,17 +36,6 @@ class UserServiceTest {
     private RecordRepository recordRepository;
     @Mock
     private AuthenticationService authenticationService;
-    private UserService userService;
-
-    @BeforeEach
-    void setUp() {
-        userService = new UserService(
-                userRepository,
-                accountRepository,
-                recordRepository,
-                authenticationService
-        );
-    }
 
     @Test
     void getAll() {
@@ -68,7 +60,7 @@ class UserServiceTest {
                 new ArrayList<>(),
                 "USD"
         );
-        given(userRepository.findById(id)) // anyLong()
+        given(userRepository.findById(id))
                 .willReturn(Optional.of(user));
 
         // when

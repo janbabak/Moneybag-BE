@@ -69,4 +69,17 @@ public class Record {
                 .category(category.dto())
                 .build();
     }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", label='" + label + '\'' +
+                ", note='" + note + '\'' +
+                ", date=" + date +
+                ", account=" + account.getId() + " " + account.getName() +
+                ", category=" + category.getId() + " " + category.getName() +
+                '}';
+    }
 }
