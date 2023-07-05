@@ -19,7 +19,7 @@ public class CreateCategoryRequest {
     private String name;
 
     @Size(max = 40)
-    private String icon = "mid-shape-outline";
+    private String icon = "mdi-shape-outline";
 
     @Pattern(
             regexp = "^#[0-9abcdefABCDEF]{6}|^#[0-9abcdefABCDEF]{3}",

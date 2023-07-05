@@ -146,7 +146,7 @@ class UserServiceTest {
                 .willReturn(updatedUser);
 
         // when
-        userService.update(id, updateRequest);
+        User result = userService.update(id, updateRequest);
 
         // then
         ArgumentCaptor<Long> idCapture = ArgumentCaptor.forClass(Long.class);
@@ -155,6 +155,7 @@ class UserServiceTest {
         verify(userRepository).save(updatedUserCapture.capture());
         assertThat(idCapture.getValue()).isEqualTo(id);
         assertThat(updatedUserCapture.getValue()).isEqualTo(updatedUser);
+        assertThat(result).isEqualTo(updatedUser);
     }
 
     @Test
@@ -181,7 +182,6 @@ class UserServiceTest {
 
         // when
         TotalAnalytic totalAnalytic = userService.getTotalAnalytic(userId, from, to);
-
         // then
         assertThat(totalAnalytic.getIncomes()).isEqualTo(income);
         assertThat(totalAnalytic.getExpenses()).isEqualTo(expenses);

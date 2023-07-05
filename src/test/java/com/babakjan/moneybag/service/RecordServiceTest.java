@@ -179,7 +179,7 @@ class RecordServiceTest {
                 .willReturn(category);
 
         // when
-        recordService.save(createRequest).getId();
+        recordService.save(createRequest);
 
         // then
         ArgumentCaptor<Record> recordCapture = ArgumentCaptor.forClass(Record.class);
@@ -253,7 +253,7 @@ class RecordServiceTest {
                 .willReturn(updatedRecord);
 
         // when
-        recordService.update(recordId, updateRequest);
+        Record result = recordService.update(recordId, updateRequest);
 
         // then
         ArgumentCaptor<Long> idCapture = ArgumentCaptor.forClass(Long.class);
@@ -262,6 +262,7 @@ class RecordServiceTest {
         verify(recordRepository).save(updatedRecordCapture.capture());
         assertThat(idCapture.getValue()).isEqualTo(recordId);
         assertThat(updatedRecordCapture.getValue()).isEqualTo(updatedRecord);
+        assertThat(result).isEqualTo(updatedRecord);
     }
 
     @Test

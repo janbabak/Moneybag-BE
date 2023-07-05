@@ -1,8 +1,8 @@
 package com.babakjan.moneybag.controller;
 
 import com.babakjan.moneybag.dto.category.CategoryAnalyticDto;
-import com.babakjan.moneybag.dto.category.CreateCategoryRequest;
 import com.babakjan.moneybag.dto.category.CategoryDto;
+import com.babakjan.moneybag.dto.category.CreateCategoryRequest;
 import com.babakjan.moneybag.entity.ErrorMessage;
 import com.babakjan.moneybag.error.exception.CategoryNotFoundException;
 import com.babakjan.moneybag.error.exception.UserNotFoundException;
@@ -109,7 +109,7 @@ public class CategoryController { //TODO add security
             ),
     })
     public void delete(@PathVariable Long id) throws CategoryNotFoundException {
-        categoryService.delete(id);
+        categoryService.deleteById(id);
     }
 
     /**

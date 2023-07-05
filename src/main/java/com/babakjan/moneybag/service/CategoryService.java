@@ -1,8 +1,8 @@
 package com.babakjan.moneybag.service;
 
 import com.babakjan.moneybag.dto.category.CategoryAnalyticDto;
-import com.babakjan.moneybag.dto.category.CreateCategoryRequest;
 import com.babakjan.moneybag.dto.category.CategoryDto;
+import com.babakjan.moneybag.dto.category.CreateCategoryRequest;
 import com.babakjan.moneybag.entity.Category;
 import com.babakjan.moneybag.entity.CategoryAnalytic;
 import com.babakjan.moneybag.error.exception.CategoryNotFoundException;
@@ -72,7 +72,7 @@ public class CategoryService {
      * @param id category id
      * @throws CategoryNotFoundException Category of specified id doesn't exist.
      */
-    public void delete(Long id) throws CategoryNotFoundException {
+    public void deleteById(Long id) throws CategoryNotFoundException {
         authenticationService.ifNotAdminThrowAccessDenied();
         if (id == null) {
             throw new CategoryNotFoundException("Category id can't be null.");

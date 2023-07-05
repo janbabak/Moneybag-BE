@@ -36,6 +36,7 @@ public class Category {
     public Category(CreateCategoryRequest request) {
         name = request.getName();
         icon = request.getIcon();
+        color = request.getColor();
         records = new ArrayList<>();
     }
 
