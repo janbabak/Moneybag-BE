@@ -167,13 +167,13 @@ class UserServiceTest {
         String currency = "CZK";
         Double income = 1253.9;
         Double expenses = -253.9;
-        Double totalBalance = 900.02;
+        Double totalBalance = 9000.02;
         Account account = Account.builder()
                 .currency(currency)
                 .build();
-        given(recordRepository.getTotalIncomes(userId, from, to))
+        given(recordRepository.getTotalIncomes(eq(userId), eq(from), any()))
                 .willReturn(income);
-        given(recordRepository.getTotalExpenses(userId, from, to))
+        given(recordRepository.getTotalExpenses(eq(userId), eq(from), any()))
                 .willReturn(expenses);
         given(accountRepository.findAll())
                 .willReturn(List.of(account));
@@ -182,10 +182,11 @@ class UserServiceTest {
 
         // when
         TotalAnalytic totalAnalytic = userService.getTotalAnalytic(userId, from, to);
+
         // then
         assertThat(totalAnalytic.getIncomes()).isEqualTo(income);
         assertThat(totalAnalytic.getExpenses()).isEqualTo(expenses);
-        assertThat(totalAnalytic.getBalance()).isEqualTo(totalBalance);
+        assertThat(totalAnalytic.getBalance()).isEqualTo(8000.02);
         assertThat(totalAnalytic.getCashFlow()).isEqualTo(1000.0, withPrecision(0.000001));
     }
 

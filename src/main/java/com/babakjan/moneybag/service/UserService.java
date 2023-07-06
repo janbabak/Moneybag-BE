@@ -143,7 +143,7 @@ public class UserService {
         if (dateLt != null) {
             Double totalIncomesAfterRange = recordRepository.getTotalIncomes(userId, dateLt, new Date());
             Double totalExpenseAfterRange = recordRepository.getTotalExpenses(userId, dateLt, new Date());
-            totalBalance += - totalIncomesAfterRange - totalExpenseAfterRange; //in order to get balance from range
+            totalBalance -= (totalIncomesAfterRange + totalExpenseAfterRange); //in order to get balance from range
         }
         return totalBalance;
     }

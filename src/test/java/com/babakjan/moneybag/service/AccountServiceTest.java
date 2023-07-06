@@ -46,7 +46,7 @@ class AccountServiceTest {
     }
 
     @Test
-    void getById() throws UserNotFoundException, AccountNotFoundException {
+    void getById() throws UserNotFoundException {
         // given
         Long userId = 435980L;
         User user = User.builder()
