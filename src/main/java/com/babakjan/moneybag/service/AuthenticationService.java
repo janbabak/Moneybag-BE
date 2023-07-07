@@ -109,7 +109,7 @@ public class AuthenticationService {
      */
     public void ifNotAdminOrSelfRequestThrowAccessDenied(Long id) throws UserNotFoundException {
         if (isNotAdminOrSelfRequest(id)) {
-            throw new AccessDeniedException("Access denied");
+            throw new AccessDeniedException("Access denied.");
         }
     }
 
