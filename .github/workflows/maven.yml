@@ -34,5 +34,8 @@ jobs:
       - name: Update dependency graph
         uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
 
+      - name: debug print
+        run:  echo "prod db host" $PROD_DB_HOST
+
       - name: Execute Jar file
-        run: echo "prod db host" & echo $PROD_DB_HOST & sudo kill -9 `sudo lsof -t -i:80` & sudo -E java -jar -Dspring.profiles.active=prod /home/ubuntu/actions-runner/_work/Moneybag-BE/Moneybag-BE/target/Moneybag-0.0.1-SNAPSHOT.jar &
+        run: sudo kill -9 `sudo lsof -t -i:80` & sudo -E java -jar -Dspring.profiles.active=prod /home/ubuntu/actions-runner/_work/Moneybag-BE/Moneybag-BE/target/Moneybag-0.0.1-SNAPSHOT.jar &
